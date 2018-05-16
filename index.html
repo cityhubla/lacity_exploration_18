@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.45.0/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto+Condensed" rel="stylesheet">
+    <style>
+        body { margin:0; padding:0; 
+        font-family:'Roboto Condensed';
+        color:white}
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+        #title {
+        position:absolute;
+        bottom:0;
+        pointer-events: none;
+        user-select: none;
+        font-size:4em;
+        }
+        
+        #credit {
+            font-size: 1em;
+            position: absolute;
+            bottom:0;
+            color:white;
+        }
+        
+        #credit a:link{
+        color:white
+        }
+        
+        #credit a:visited{
+        color:white
+        }
+        
+        @media screen and (max-width: 50em) {
+        #title{
+        font-size:2em;
+		line-height: 1;
+		bottom: 2em;
+        }
+        }
+ </style>
+</head>
+<body>
+
+<div id='map'></div>
+<div id='title'>
+    <h1>Just Downtown LA's Street Lights</h1>
+
+</div>
+    <div id='credit'>
+    <p><a href="http://geohub.lacity.org/datasets/5e7c617cd8c141308c79024baa2ffcae_0">Data from LACITY Geohub</a></p>
+    <p><a href="https://twitter.com/theworksla">Made with MapboxGL by Omar Ureta</a></p>
+    </div>    
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiY3J1emluNzN2dyIsImEiOiJjajJ3djc3ZHAwMHh1MzhxcGY2cmtmMjF5In0.wuIHWedRimzqE_NjYh3x0g';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/cruzin73vw/cjh8q3qbh6yug2rqlrk1m5yy7', //stylesheet location
+    center: [-118.243463,34.051834], // starting position
+    pitch:31,
+	bearing:-23.2,
+    zoom: 15.11, // starting zoom
+    minZoom:15,
+    hash:true,
+    logoPosition:'top-right',
+	maxBounds:[[-118.28795,34.02766],[-118.20881,34.06397]]
+});
+</script>
+
+</body>
+</html>
